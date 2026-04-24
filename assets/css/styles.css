@@ -10,16 +10,16 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
 .brand{display:flex;gap:14px;align-items:center}.brand-logo{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#60a5fa,#2563eb);display:grid;place-items:center;font-size:1.4rem;font-weight:800;box-shadow:0 10px 24px rgba(37,99,235,.35)}
 .brand h1{margin:0;font-size:1.2rem}.brand p{margin:4px 0 0;color:#cbd5e1;font-size:.9rem}
 .nav{display:grid;gap:10px}.nav-link{background:transparent;border:1px solid rgba(255,255,255,.08);color:#e5e7eb;padding:14px 16px;border-radius:18px;text-align:left;transition:.25s ease}
-.nav-link:hover,.nav-link.active{background:rgba(37,99,235,.18);border-color:rgba(96,165,250,.45);transform:translateX(3px)}
+.nav-link:hover,.nav-link.active{background:rgba(37,99,235,.18);border-color:rgba(5, 32, 65, 0.45);transform:translateX(3px)}
 .sidebar-footer{margin-top:auto;display:grid;gap:14px}.user-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:20px;display:flex;gap:12px;align-items:center}
-.avatar{width:46px;height:46px;border-radius:14px;background:#1d4ed8;display:grid;place-items:center;font-weight:700}.user-card p{margin:4px 0 0;color:#cbd5e1;font-size:.88rem}
+.avatar{width:46px;height:46px;border-radius:14px;background:#2e58ce;display:grid;place-items:center;font-weight:700}.user-card p{margin:4px 0 0;color:#cbd5e1;font-size:.88rem}
 .main-content{padding:24px 28px}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow);border-radius:28px;padding:18px 22px;margin-bottom:20px}
 .topbar h2{margin:0 0 6px;font-size:1.4rem}.topbar p{margin:0;color:var(--muted)}.topbar-actions{display:flex;gap:12px;align-items:center}
 .view{display:none}.view.active{display:block}
 .hero-panel{background:linear-gradient(135deg,#eff6ff,#ffffff);border:1px solid #dbeafe;border-radius:28px;padding:28px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:var(--shadow);margin-bottom:20px}
 .hero-panel h3{margin:8px 0 10px;font-size:1.8rem;max-width:900px}.hero-panel p{margin:0;max-width:900px;color:var(--muted);line-height:1.7}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:.8rem}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#dbeafe;color:#3b56a0;font-weight:700;font-size:.8rem}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}.stat-card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:24px;box-shadow:var(--shadow)}
 .stat-card h4{margin:0 0 14px;color:var(--muted);font-size:.95rem;font-weight:600}.stat-value{font-size:2rem;font-weight:800;margin-bottom:10px}.stat-meta{font-size:.92rem;color:var(--muted)}
 .grid-two{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}.light-card{background:var(--panel-soft)}
@@ -51,3 +51,60 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
 @media (max-width:1180px){.stats-grid,.mesas-grid,.menu-grid,.kitchen-board{grid-template-columns:repeat(2,1fr)}.grid-two{grid-template-columns:1fr}}
 @media (max-width:860px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;left:-100%;top:0;bottom:0;width:280px;z-index:1100;transition:.25s ease}.sidebar.open{left:0}.main-content{padding:18px}.topbar{padding:16px}.hero-panel{flex-direction:column;align-items:flex-start}}
 @media (max-width:640px){.stats-grid,.mesas-grid,.menu-grid,.kitchen-board,.form-grid{grid-template-columns:1fr}.action-row,.hero-actions,.section-head{flex-direction:column;align-items:stretch}.topbar{align-items:flex-start}}
+
+/* --- Añade esto al final de styles.css --- */
+
+body {
+    /* Reemplaza 'fondo-restaurante.jpg' por el nombre de tu archivo */
+   background-image: url('../fondo-restaurante.jpg') !important;
+    background-size: cover;          /* Cubre todo el ancho y alto visible */
+    background-position: center;     /* Centra la imagen */
+    background-repeat: no-repeat;    /* Evita que se repita */
+    background-attachment: fixed;    /* Efecto "paralaje": el fondo se queda quieto al hacer scroll (opcional pero queda muy bien) */
+}
+
+/* --- TRANSFORMACIÓN FINAL DEL LOGO --- */
+
+.brand-logo {
+    /* 1. Cambiamos el círculo azul por el estilo pétalo dorado */
+    background: linear-gradient(135deg, #c5a059 0%, #f1d5a2 100%) !important;
+    border-radius: 50% 0% 50% 0% !important; /* Forma de hoja/pétalo */
+    
+    /* 2. Ocultamos la letra T */
+    color: transparent !important;
+    
+    /* 3. Ajustes de tamaño y sombra */
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* Dibujamos la hojita blanca minimalista dentro */
+.brand-logo::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(45deg);
+}
+
+/* Ajuste del nombre "Tierra Viva" para que combine con el dorado */
+.brand h1 {
+    color: #f1d5a2 !important; /* Tono dorado claro */
+    font-size: 1.5rem !important;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Oscurecer un poco más el fondo del panel para que la letra blanca destaque */
+.panel-cocina-contenedor {
+    background: rgba(0, 0, 0, 0.4) !important; /* Una capa negra muy suave */
+    border-radius: 15px;
+    padding: 20px;
+}

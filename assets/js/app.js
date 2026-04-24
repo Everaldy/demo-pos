@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'gyozapos-pro-state';
+const STORAGE_KEY = 'demopos-pro-state-v3';
 let state = loadState();
 let currentUser = null;
 let currentEditingOrderId = null;
